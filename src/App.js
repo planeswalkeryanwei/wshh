@@ -1,5 +1,4 @@
 import { Input, Table, Space, Popconfirm } from 'antd'
-import axios from 'axios'
 import React from 'react'
 import './App.css'
 
@@ -41,29 +40,12 @@ class App extends React.Component {
   }
 
   // 搜索
-  onSearch = async (value) => {
-    const res = await axios.get(`http://localhost:3001/data/?q=${value}`)
-    this.setState({
-      list: res.data
-    })
-  }
+
   // 删除
-  handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/data/${id}`)
-    this.loadList()
-  }
+
   // 加载列表
-  loadList = async () => {
-    const res = await axios.get('http://localhost:3001/data')
-    console.log(res)
-    this.setState({
-      list: res.data
-    })
-  }
-  componentDidMount () {
-    // 发送接口请求
-    this.loadList()
-  }
+
+
   render () {
     return (
       <div className="container">
