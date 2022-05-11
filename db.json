@@ -1,0 +1,72 @@
+{
+  "user": [
+    {
+      "uid": 1,
+      "uname": "阿一",
+      "uold": "11",
+      "usex": "男",
+      "uoname": "采购部"
+    },
+    {
+      "uid": 2,
+      "uname": "阿二",
+      "uold": "22",
+      "usex": "女",
+      "uoname": "研发部"
+    },
+    {
+      "uid": 3,
+      "uname": "阿三",
+      "uold": "33",
+      "usex": "男",
+      "uoname": "研发部"
+    },
+    {
+      "uid": 4,
+      "uname": "阿四",
+      "uold": "44",
+      "usex": "女",
+      "uoname": "行政部"
+    },
+    {
+      "uid": 5,
+      "uname": "阿五",
+      "uold": "55",
+      "usex": "男",
+      "uoname": "行政部"
+    },
+    {
+      "uid": 6,
+      "uname": "阿六",
+      "uold": "66",
+      "usex": "女",
+      "uoname": "行政部"
+    }
+  ],
+  "office": [
+    {
+      "oid": 1,
+      "oname": "采购部"
+    },
+    {
+      "oid": 2,
+      "oname": "研发部"
+    },
+    {
+      "oid": 3,
+      "oname": "行政部"
+    }
+    
+  ]
+  ,
+  "data": [
+    {
+      "dname": "wang",
+      "dpassword": "123456"
+    },
+    {
+      "dname": "ang",
+      "dpassword": "yanwei22"
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+
+
+*{
+    margin:0;}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+#root{
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+
+}
+
+
+ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+
+
+
+#head{
+    height: 9%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: aqua; */
+}
+#left{
+    height: 90%;
+    width: 10%;
+    
+    /* background-color:blue; */
+    display:inline-block;
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 32, 118, 0.61)));
+    border-radius: 30px;
+    margin: 0 auto; 
+    text-align: center;
+}
+#headTitle{
+    padding-left: 255px;
+}
+#left1{
+    padding-top: 20px;
+   
+}
+#login{
+    height: 90%;
+    width: 88%;
+    display:inline-block;
+    float: right;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)));
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+#loginlocal{
+    height: 80%;
+    width: 80%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)));
+    margin: 0 auto; 
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    /* justify-content:space-between; */
+    justify-content: space-around;
+}
+.dengluInput{
+    font-size: 20px;
+}
+/* #loginlocal{
+    display:inline-block;
+    display: flex;
+    align-items: center;
+} */
+/* input {
+
+    background: none;
+
+    outline: none;
+
+    border: none;
+
+} */
+
+
+#mainall{
+    height: 90%;
+    width: 88%;
+    display:inline-block;
+    float: right;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)));
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+#mainall table {
+
+    border-color:  #f0f0f0 !important ;
+    border-collapse: collapse !important ;
+ 
+border: 1px none #f0f0f0 !important ;
+    
+
+ 
+}
+#table{
+   
+    margin: 0 auto; 
+    text-align: center;
+    background-color: white;
+    
+}
+#mainall button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    position: static;
+    border: 0;
+    border-radius: 0;
+    color: transparent;
+}
+
+.table-button{
+    color: rgb(51, 136, 249) !important;
+    background-color: transparent;
+}
+#table-button2{
+    padding-left: 23px !important;
+}
+#mainall tr {
+    height: 55px;
+}
+
+#mainall th {
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+}
+
+#mainall td {
+
+    font-size: 14px;
+
+}
+
+#mainall td,
+th {
+    width: 125.14px;
+    padding-left: 16px;
+}
+.leftbutton{
+    
+    
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    border-radius: 30px;
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+.loginbutton{
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    /* border-radius: 30px; */
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+#loginbutton2{
+    margin-left: 40px !important;
+}
+.inputbutton{
+    width: 67.39px !important;
+    height: 42.14px !important;
+    /* background-color: rgb(24, 144, 255) !important; */
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    /* border-radius: 30px; */
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+#Addbutton{
+    background-color:rgb(24, 144, 255) !important ;
+}
+#inputbutton1{
+    float: left;
+}
+#formall{
+    height: 90%;
+    width: 88%;
+    display:inline-block;
+    float: right;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)));
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content: center;
+    /* display: flex;
+    align-items: center; */
+}
+#input-user{
+    border-width:1px ;
+    height: 30px;
+    width: 300px;
+}
+#input-password{
+    border-width:1px ;
+    height: 30px;
+    width: 300px;
+}
+/* App.css */
+.openBtn {
+    margin-top: 240px;
+    border: 1px solid dodgerblue;
+}
+
+.dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 30px;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    font-size: 21px;
+}
+.add{
+    height:100% ;
+    width: 89%;
+    display:inline-block;
+}
+.addName{
+    height:100% ;
+    width: 10%;
+    display:inline-block;
+}
+.addAll{
+    font-size: 20px;
+    display:inline-block;
+    float: left;
+    height:4% ;
+    width: 50%;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    
+}
+#addButton{
+    display: inline-block;
+    float: left;
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    font-size: 16px;
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+#returnButton{
+    /* float: left !important; */
+    display: inline-block;
+    float: left;
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    font-size: 16px;
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+    margin-right: auto;
+    margin-bottom: 60px;
+    margin-left:120px ;
+    
+}
+#outLoginButton{
+    display: inline-block;
+    margin-left: auto;
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    font-size: 16px;
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+#hello {
+    font-size: 50px;
+}
+
+#all  input {
+
+    background: none;
+
+    outline: none;
+
+    border: none;
+
+}
+
+#container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    
+}
+
+#all button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    position: static;
+    border: 0;
+    border-radius: 0;
+    color: transparent;
+}
+
+button::after {
+    content: '';
+    width: 0;
+    height: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: none;
+    background: transparent;
+}
+
+#search-clearbutton {
+    background-image: url(../img/bg.jpg) !important;
+    background-size: cover;
+}
+
+#search {
+    border-style: solid;
+    border-width: 1px;
+    width: 529.61px;
+    height: 40.14px;
+    display: flex;
+    align-items: center;
+    /* display: inline-block; */
+    float: left;
+    border-color: rgb(217, 217, 217);
+    margin-bottom: 10px;
+
+}
+
+#search-input {
+    display: inline-block;
+    float: left;
+    height: 25px;
+    width: 491.66px;
+    font-size: 16px;
+    /* border-color:red; */
+    padding-left: 11px;
+
+}
+
+/* Safari，Chrome WebKit browsers */
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+/* 火狐 Mozilla Firefox 4 to 18 */
+input:-moz-placeholder {
+    color: #ccc;
+}
+
+/* 火狐 Mozilla Firefox 19+ */
+input::-moz-placeholder {
+    color: #ccc;
+}
+
+/* Internet Explorer 10+ */
+input:-ms-input-placeholder {
+    color: #ccc;
+}
+
+#table-button {
+    color: rgb(51, 136, 249) !important;
+    background-color: transparent;
+}
+
+#search-button {
+    display: inline-block;
+    float: left;
+    width: 67.39px !important;
+    height: 42.14px !important;
+    background-color: rgb(24, 144, 255) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white!important;
+    font-size: 16px;
+    border-color: rgb(217, 217, 217);
+    border-color:rgb(24, 144, 255) !important ;
+}
+
+#search-clearbutton {
+    display: inline-block;
+    float: left;
+    width: 12px !important;
+    height: 12px !important;
+
+}
+
+#search-all {
+    /* width: 600px !important;
+    height: 40.14px !important; */
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    /* display: inline-block;
+    float: right;
+    background-color: #fafafa !important ; */
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+#all{
+    height: 90%;
+    width: 88%;
+    display:inline-block;
+    float: right;
+    /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255))); */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)));
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#rwbh {
+    width: 125.14px;
+}
+
+#rwmc {
+    width: 125.14px;
+}
+
+#rwms {
+    width: 262.94px;
+}
+
+#cz {
+    width: 85.78px;
+}
+
+table {
+
+    border-color:  #f0f0f0 !important ;
+    border-collapse: collapse !important ;
+ 
+border: 1px none #f0f0f0 !important ;
+background-color: white;
+    display: inline-block;
+    float: left;
+
+ 
+}
+#table{
+    display: inline-block;
+    float: left;
+
+}
+#search{
+    
+    background-color: white;
+
+}
+
+tr {
+    height: 55px;
+}
+
+th {
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+}
+
+td {
+
+    font-size: 14px;
+
+}
+
+td,
+th {
+    padding-left: 16px;
+}
