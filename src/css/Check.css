@@ -19,7 +19,8 @@ position: absolute;
 position: absolute;
 display: flex;
     align-items: center;
-
+    margin-left: 478px;
+    margin-top: 200px;
 }
 #checkButtonUnder{
     background-color: rgb(113,197,77);
@@ -55,4 +56,13 @@ z-index: 3;
     margin: 0 auto;
     z-index: 1;
     float: right !important;
+}
+#loading{
+    background-image: url(../img/loading.gif);
+    z-index: 999;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  display:inline-block;
 }
