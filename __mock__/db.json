@@ -1,0 +1,117 @@
+{
+  "user": [
+    {
+      "uname": "阿一",
+      "uphone": "13840547611",
+      "uold": "11",
+      "usex": "男",
+      "uoname": "采购部",
+      "id": 1
+    },
+    {
+      "uname": "阿二",
+      "uphone": "13840547612",
+      "uold": "22",
+      "usex": "女",
+      "uoname": "研发部",
+      "id": 2
+    },
+    {
+      "uname": "阿三",
+      "uphone": "13840547613",
+      "uold": "33",
+      "usex": "男",
+      "uoname": "研发部",
+      "id": 3
+    },
+    {
+      "uname": "阿四",
+      "uphone": "13840547614",
+      "uold": "44",
+      "usex": "女",
+      "uoname": "行政部",
+      "id": 4
+    },
+    {
+      "uname": "阿五",
+      "uphone": "13840547615",
+      "uold": "55",
+      "usex": "男",
+      "uoname": "行政部",
+      "id": 5
+    },
+    {
+      "uname": "阿六",
+      "uphone": "13840547616",
+      "uold": "66",
+      "usex": "女",
+      "uoname": "行政部",
+      "id": 6
+    },
+    {
+      "uname": "2",
+      "uphone": "2",
+      "uold": "2",
+      "usex": "2",
+      "uoname": "2",
+      "id": 7
+    },
+    {
+      "uname": "艾世萍",
+      "uphone": "11111111111",
+      "uold": "22",
+      "usex": "女",
+      "uoname": "研发部",
+      "id": 8
+    },
+    {
+      "uname": "1111",
+      "uphone": "12222222222",
+      "uold": "10",
+      "usex": "男",
+      "uoname": "研发部",
+      "id": 9
+    }
+  ],
+  "office": [
+    {
+      "oid": 1,
+      "oname": "采购部"
+    },
+    {
+      "oid": 2,
+      "oname": "研发部"
+    },
+    {
+      "oid": 3,
+      "oname": "行政部"
+    }
+  ],
+  "data": [
+    {
+      "dname": "wang",
+      "dpassword": "123456"
+    },
+    {
+      "dname": "ang",
+      "dpassword": "yanwei22"
+    }
+  ],
+  "data1": [
+    {
+      "id": 4,
+      "name": "写vue代码",
+      "des": "vuevuevuevuevuevuevuevuevuevue"
+    },
+    {
+      "id": 5,
+      "name": "写react代码",
+      "des": "reactreactreactreactreactreact"
+    },
+    {
+      "id": 6,
+      "name": "写webpack代码",
+      "des": "webpackwebpackwebpackwebpackwebpack"
+    }
+  ]
+}

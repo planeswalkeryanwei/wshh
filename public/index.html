@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- 设置网站标签栏上的偏爱图标，%PUBLIC_URL%指的是public路径 -->
+    <link rel="icon" href="%PUBLIC_URL%/x.ico" />
+    <!-- 移动端适配视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 安卓颜色 -->
+    <meta name="theme-color" content="#000000" />
+    <!-- SEO中TKD中的D，页面描述 -->
+    <!-- title --><!-- keywords --><!-- description -->
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- 在苹果手机中，将页面链接创建到手机屏幕，显示的那个图标，只有苹果手机中有 -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      显示json提供了web应用程序安装在服务器上时使用的元数据
+用户的移动设备或桌面。看见https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <!-- 页面套壳，安卓壳，IOS壳的配置文件 -->
+    <!-- 变成app -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+     注意上面的标签中使用了%PUBLIC_URL%。
+在构建过程中，它将被替换为“public”文件夹的URL。
+HTML只能引用“public”文件夹中的文件。
+与“/favicon.ico”或“favicon.ico”不同，“%PUBLIC_URL%/favicon.ico”将
+正确使用客户端路由和非根公共URL。
+了解如何通过运行“npm run build”来配置非根公共URL。
+    -->
+    <title>heiheihei</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+     这个HTML文件是一个模板。
+如果你直接在浏览器中打开它，你会看到一个空页面。
+您可以将webfonts、元标记或分析添加到此文件。
+构建步骤将把捆绑的脚本放入<body>标记中。
+要开始开发，请运行“npm开始”或“纱线开始”。
+要创建生产捆绑包，请使用“npm运行构建”或“纱线构建”。
+    -->
+  </body>
+</html>

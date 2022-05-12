@@ -1,0 +1,68 @@
+#check{
+    height: 90%;
+    width: 88%;
+    display:inline-block;
+    float: right;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255)));
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+#checkAll{
+    width: 300px;
+height: 34px;
+background-color: rgb(232, 232, 232); 
+/* z-index: 1; */
+position: absolute;
+position: absolute;
+display: flex;
+    align-items: center;
+    margin-left: 478px;
+    margin-top: 200px;
+}
+#checkButtonUnder{
+    background-color: rgb(113,197,77);
+    width: 21px;
+    height: 34px;
+    /* z-index: 1; */
+    font-size: 12px;
+    display: block;
+    display: inline-block;
+    position: absolute;
+/* border: 1px solid #ccc; */
+z-index: 2;
+}
+#checkButton{
+    background-color: white;
+    text-align: center;
+    width: 40px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #ccc; 
+    color: #737383;
+    cursor:move;
+    /* z-index: 2; */
+    font-size: 12px;
+    position: absolute;
+z-index: 3;
+}
+#placeholder{
+    /* position: absolute; */
+    text-align: center !important;
+    font-size: 12px;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    float: right !important;
+}
+#loading{
+    background-image: url(../img/loading.gif);
+    z-index: 999;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  display:inline-block;
+}
