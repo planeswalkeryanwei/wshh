@@ -37,8 +37,6 @@ function Main() {
   }
   useEffect(() => {
     loadData()
-
-
   }, [])
 
 
@@ -61,15 +59,6 @@ function Main() {
       setModalVisible(false);
     }
   };
-
-
-  {/* <p><div>用户名:{}</div></p>
-        <p>这是一个段落。</p>
-        <p>这是一个段落。</p>
-        <p>这是一个段落。</p>
-        <p>这是一个段落。</p> */}
-
-
 
   const modalChildren = (
     <div className="dialog">

@@ -49,9 +49,10 @@ function Login() {
             alert("请将登录信息补全");
         }
     }
-    // document.onmousemove = function () {
-    //     console.log('onmousemove');
-    // };
+    document.onmousemove = function () {
+        // document.getElementById("checkButton").onmousemove = null;
+        console.log("???");
+    };
     // document.onmousedown = function () {
     //     console.log('mousedown');
     // };
@@ -89,7 +90,6 @@ function Login() {
                             setTimeout(function(){ 
                                 document.getElementById("checkAll").style.display="none"
                                },500);
-                            
                         }, random2to5Ms);
                         
                 }
@@ -143,7 +143,7 @@ function Login() {
 
 
     return (
-
+        
         <div id='login' >
 
             <div id='loginlocal'>
