@@ -37,6 +37,7 @@ function Main() {
   }
   useEffect(() => {
     loadData()
+    
   }, [])
 
 
