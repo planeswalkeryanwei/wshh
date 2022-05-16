@@ -4,10 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import '../css/headleft.css'
 import '../css/Check.css'
 import { useEffect, useState } from "react"
-// import { useEffect, useState } from "react"
 
 function Login() {
     const navigate = useNavigate();
+    const [username, setUserName] = useState([])
+    const [userpw, setUserPw] = useState([])
     // 重置 
     const re = () => {
 
@@ -18,16 +19,13 @@ function Login() {
     // 登录
     const uselogin = async () => {
 
-
-        if (document.getElementById('input-user').value != "" && document.getElementById('input-password').value != "") {
+        if (username != "" && userpw != "") {
             let checkpw = /^(?![^\da-zA-Z]+$).{6,12}$/;
-            if (checkpw.test(document.getElementById('input-password').value)) {
-                let input = document.getElementById('input-user').value;
-                const res = await axios.get(`http://localhost:3001/data/?dname=${input}`)
+            if (checkpw.test(userpw)) {
+                const res = await axios.get(`http://localhost:3001/data/?dname=${username}`)
                 console.log(res.data);
                 if (res.data != "") {
-                    let password = document.getElementById('input-password').value;
-                    if (document.getElementById('input-user').value == res.data[0].dname && document.getElementById('input-password').value == res.data[0].dpassword) {
+                    if (username == res.data[0].dname && userpw == res.data[0].dpassword) {
                         alert("欢迎" + res.data[0].dname + "登录");
                         navigate('/main')
                     }
@@ -50,27 +48,13 @@ function Login() {
         }
     }
     document.onmousemove = function () {
-        // document.getElementById("checkButton").onmousemove = null;
         console.log("???");
     };
-    // document.onmousedown = function () {
-    //     console.log('mousedown');
-    // };
-    // document.onmouseup = function () {
-    //     console.log('onmouseup');
-    // }
 
-
-
-    const [faildOrNot, setFaildOrNot] = useState(1)
-    var moveDistance = 0;
+        const [faildOrNot, setFaildOrNot] = useState(1)
+        var moveDistance = 0;
     function down(e) {
         var checkButtonUnder = document.getElementById("checkButtonUnder");
-        // e.target.style.left = "0px";
-        // checkButtonUnder.style.width = "21px";
-        // e.target.onmousedown = null;
-        // e.target.onmousemove = null;
-        // checkButtonUnder.innerHTML = ""
         e.target.onmousemove = (MouseEvent) => {
             setFaildOrNot(1);
             console.log(faildOrNot);
@@ -147,9 +131,15 @@ function Login() {
         <div id='login' >
 
             <div id='loginlocal'>
-                <div className='dengluInput'>用户名：  <input id="input-user" type="text" placeholder="请输入用户名"   ></input></div>
+                <div className='dengluInput'>用户名：  <input id="input-user" type="text" placeholder="请输入用户名" onChange={event => {
+                    console.log(username)
+                    setUserName(event.target.value)
+                }} ></input></div>
 
-                <div className='dengluInput'>  密码：   <input id="input-password" type="password" placeholder="请输入6-12位字母数字组成的密码"   ></input>
+                <div className='dengluInput'>  密码：   <input id="input-password" type="password" placeholder="请输入6-12位字母数字组成的密码" onChange={event => {
+                    console.log(userpw)
+                    setUserPw(event.target.value)
+                }} ></input>
                 </div>
 
                
