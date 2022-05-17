@@ -7,8 +7,9 @@ import { useEffect, useState } from "react"
 
 function Login() {
     const navigate = useNavigate();
-    const [username, setUserName] = useState([])
+    const [username, setUserName] = useState({})
     const [userpw, setUserPw] = useState([])
+    const [checkOrNot, setCheckOrNot] = useState(0)
     // 重置 
     const re = () => {
 
@@ -31,6 +32,9 @@ function Login() {
                     }
                     else {
                         alert("账号或密码错误");
+                        setCheckOrNot(checkOrNot+1);
+                        // setCheckOrNot(parseInt(checkOrNot)+1);
+                        console.log(checkOrNot);
                     }
                 }
                 else {
@@ -47,9 +51,9 @@ function Login() {
             alert("请将登录信息补全");
         }
     }
-    document.onmousemove = function () {
-        console.log("???");
-    };
+    // document.onmousemove = function () {
+    //     console.log("???");
+    // };
 
         const [faildOrNot, setFaildOrNot] = useState(1)
         var moveDistance = 0;
@@ -132,8 +136,8 @@ function Login() {
 
             <div id='loginlocal'>
                 <div className='dengluInput'>用户名：  <input id="input-user" type="text" placeholder="请输入用户名" onChange={event => {
+                    setUserName(event.target.value);
                     console.log(username)
-                    setUserName(event.target.value)
                 }} ></input></div>
 
                 <div className='dengluInput'>  密码：   <input id="input-password" type="password" placeholder="请输入6-12位字母数字组成的密码" onChange={event => {
@@ -143,7 +147,7 @@ function Login() {
                 </div>
 
                
-                    <div id='checkAll'>
+                    <div id='checkAll' style={{ opacity: checkOrNot %3== 0&&checkOrNot != 0 ? "1" : "0" }}>
                         <div id='checkButtonUnder' onMouseMove={event => { move(event) }} >
                             
                         </div>
