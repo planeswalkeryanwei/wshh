@@ -39,6 +39,7 @@ function Login() {
                     else {
                         alert("账号或密码错误");
                         setCheckOrNot(checkOrNot + 1);
+                        console.log(checkOrNot);
                         if (checkOrNot >= 2) {
                             setCheckOkOrNot(1);
                         }
@@ -85,8 +86,12 @@ function Login() {
                     setTimeout(function () {
                         checkButtonUnder.innerHTML = "加载完成"
                         setTimeout(function () {
+                            setCheckOrNot(0);
                             setCheckOkOrNot(2);
-                            document.getElementById("checkAll").style.display = "none"
+                            document.getElementById("checkAll").style.opacity = "0"
+                            e.target.style.left =  "0px";
+                            checkButtonUnder.style.width = "0px";
+                            checkButtonUnder.innerHTML = ""
                         }, 500);
                     }, random2to5Ms);
 
