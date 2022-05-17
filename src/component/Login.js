@@ -10,6 +10,7 @@ function Login() {
     const [username, setUserName] = useState({})
     const [userpw, setUserPw] = useState([])
     const [checkOrNot, setCheckOrNot] = useState(0)
+    const [checkOkOrNot, setCheckOkOrNot] = useState(0)
     // 重置 
     const re = () => {
 
@@ -27,12 +28,20 @@ function Login() {
                 console.log(res.data);
                 if (res.data != "") {
                     if (username == res.data[0].dname && userpw == res.data[0].dpassword) {
-                        alert("欢迎" + res.data[0].dname + "登录");
-                        navigate('/main')
+                        if (checkOkOrNot == 0 || checkOkOrNot == 2) {
+                            alert("欢迎" + res.data[0].dname + "登录");
+                            navigate('/main')
+                        }
+                        else{
+                            alert("请滑动滑块完成验证！");
+                        }
                     }
                     else {
                         alert("账号或密码错误");
-                        setCheckOrNot(checkOrNot+1);
+                        setCheckOrNot(checkOrNot + 1);
+                        if (checkOrNot >= 2) {
+                            setCheckOkOrNot(1);
+                        }
                         // setCheckOrNot(parseInt(checkOrNot)+1);
                         console.log(checkOrNot);
                     }
@@ -55,8 +64,8 @@ function Login() {
     //     console.log("???");
     // };
 
-        const [faildOrNot, setFaildOrNot] = useState(1)
-        var moveDistance = 0;
+    const [faildOrNot, setFaildOrNot] = useState(1)
+    var moveDistance = 0;
     function down(e) {
         var checkButtonUnder = document.getElementById("checkButtonUnder");
         e.target.onmousemove = (MouseEvent) => {
@@ -70,16 +79,17 @@ function Login() {
                     e.target.onmousedown = null;
                     e.target.onmousemove = null;
                     checkButtonUnder.innerHTML = "<div id='loading'></div>验证成功,请稍等！！！"
-                    var random2to5 = Math.floor(Math.random() * (5 - 2 + 1) ) + 2;
-                    var random2to5Ms=random2to5+"000";
+                    var random2to5 = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
+                    var random2to5Ms = random2to5 + "000";
                     console.log(random2to5Ms);
-                        setTimeout(function(){ 
-                            checkButtonUnder.innerHTML = "加载完成"
-                            setTimeout(function(){ 
-                                document.getElementById("checkAll").style.display="none"
-                               },500);
-                        }, random2to5Ms);
-                        
+                    setTimeout(function () {
+                        checkButtonUnder.innerHTML = "加载完成"
+                        setTimeout(function () {
+                            setCheckOkOrNot(2);
+                            document.getElementById("checkAll").style.display = "none"
+                        }, 500);
+                    }, random2to5Ms);
+
                 }
                 e.target.onmouseup = () => {
                     if (moveDistance >= 259) {
@@ -131,7 +141,7 @@ function Login() {
 
 
     return (
-        
+
         <div id='login' >
 
             <div id='loginlocal'>
@@ -146,21 +156,21 @@ function Login() {
                 }} ></input>
                 </div>
 
-               
-                    <div id='checkAll' style={{ opacity: checkOrNot %3== 0&&checkOrNot != 0 ? "1" : "0" }}>
-                        <div id='checkButtonUnder' onMouseMove={event => { move(event) }} >
-                            
-                        </div>
-                        <div id='placeholder' style={{ display: faildOrNot == 0 ? "block" : "none" }}>
-                            验证失败
-                        </div>
-                        <span id='checkButton' onMouseDown={event => { down(event) }}>
-                            &gt; &gt;
-                        </span>
-                    </div>
-             
 
-                    <div>
+                <div id='checkAll' style={{ opacity: checkOrNot >= 3 && checkOrNot != 0 ? "1" : "0" }}>
+                    <div id='checkButtonUnder' onMouseMove={event => { move(event) }} >
+
+                    </div>
+                    <div id='placeholder' style={{ display: faildOrNot == 0 ? "block" : "none" }}>
+                        验证失败
+                    </div>
+                    <span id='checkButton' onMouseDown={event => { down(event) }}>
+                        &gt; &gt;
+                    </span>
+                </div>
+
+
+                <div>
                     <button className='loginbutton' onClick={() => re()}>重置</button>
                     <button className='loginbutton' id='loginbutton2' onClick={() => uselogin()}>登录</button>
                 </div>
