@@ -33,7 +33,7 @@ function Login() {
                             navigate('/main')
                         }
                         else{
-                            alert("请滑动滑块完成验证！");
+                            alert("请滑动滑块完成验证,并等待其完成！");
                         }
                     }
                     else {
@@ -66,9 +66,9 @@ function Login() {
     // };
 
     const [faildOrNot, setFaildOrNot] = useState(1)
-    var moveDistance = 0;
+    let moveDistance = 0;
     function down(e) {
-        var checkButtonUnder = document.getElementById("checkButtonUnder");
+        let checkButtonUnder = document.getElementById("checkButtonUnder");
         e.target.onmousemove = (MouseEvent) => {
             setFaildOrNot(1);
             console.log(faildOrNot);
@@ -80,8 +80,8 @@ function Login() {
                     e.target.onmousedown = null;
                     e.target.onmousemove = null;
                     checkButtonUnder.innerHTML = "<div id='loading'></div>验证成功,请稍等！！！"
-                    var random2to5 = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
-                    var random2to5Ms = random2to5 + "000";
+                    let random2to5 = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
+                    let random2to5Ms = random2to5 + "000";
                     console.log(random2to5Ms);
                     setTimeout(function () {
                         checkButtonUnder.innerHTML = "加载完成"
@@ -118,15 +118,15 @@ function Login() {
             e.target.onmousemove = null;
         }
         else {
-            var checkButton = document.getElementById("checkButton");
+            let checkButton = document.getElementById("checkButton");
             //拖尾长度带px
-            var checkButtonWidth = e.target.style.width.split("px")[0];
+            let checkButtonWidth = e.target.style.width.split("px")[0];
             // 要往左多少
-            var goLeft = checkButtonWidth - e.nativeEvent.offsetX;
+            let goLeft = checkButtonWidth - e.nativeEvent.offsetX;
             // left在哪 数字
-            var left = checkButton.style.left.split("px")[0];
+            let left = checkButton.style.left.split("px")[0];
             // 自身长度
-            var newCheckButtonWidth = (checkButtonWidth - goLeft) + "px";
+            let newCheckButtonWidth = (checkButtonWidth - goLeft) + "px";
             e.target.style.width = newCheckButtonWidth;
             // 往右的偏移长度也要减
             moveDistance = moveDistance - goLeft;
