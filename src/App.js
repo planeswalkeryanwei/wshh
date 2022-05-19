@@ -19,10 +19,11 @@ function App() {
                 <Head />
                 <Left />
                 <Routes>
+
                     {/* <Route path='/jieshou' component={<Jieshou />} /> */}
                     <Route path='/' element={<Login />} />
                     <Route path='/demo1' element={<Demo1 />} />
-                    <Route path='/jieshou' element={<Jieshou />} />
+                    <Route path='*' element={<Jieshou />} />
                     <Route path='/modal' element={<Modal />} />
                     <Route path='/main' element={<Main />} />
                     <Route path='/head' element={<Head />} />
