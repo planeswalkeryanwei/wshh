@@ -7,16 +7,18 @@ import { useEffect, useState } from "react"
 
 function Login() {
     const navigate = useNavigate();
-    const [username, setUserName] = useState({})
-    const [userpw, setUserPw] = useState([])
+    const [username, setUserName] = useState("")
+    const [userpw, setUserPw] = useState("")
     const [checkOrNot, setCheckOrNot] = useState(0)
     const [checkOkOrNot, setCheckOkOrNot] = useState(0)
     // 重置 
     const re = () => {
 
-        document.getElementById('input-user').value = "";
-        document.getElementById('input-password').value = "";
-
+        // document.getElementById('input-user').value = "";
+        // document.getElementById('input-password').value = "";
+        setUserName('');
+        setUserPw('');
+console.log(username);
     }
     // 登录
     const uselogin = async () => {
@@ -150,12 +152,12 @@ function Login() {
         <div id='login' >
 
             <div id='loginlocal'>
-                <div className='dengluInput'>用户名：  <input id="input-user" type="text" placeholder="请输入用户名" onChange={event => {
+                <div className='dengluInput'>用户名：  <input id="input-user" type="text" placeholder="请输入用户名" value={username} onChange={event => {
                     setUserName(event.target.value);
                     console.log(username)
                 }} ></input></div>
 
-                <div className='dengluInput'>  密码：   <input id="input-password" type="password" placeholder="请输入6-12位字母数字组成的密码" onChange={event => {
+                <div className='dengluInput'>  密码：   <input id="input-password" type="password" placeholder="请输入6-12位字母数字组成的密码" value={userpw} onChange={event => {
                     console.log(userpw)
                     setUserPw(event.target.value)
                 }} ></input>
