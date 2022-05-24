@@ -11,6 +11,7 @@ import Demo1 from './component/Demo1';
 import Jieshou from './component/Jieshou';
 import Modal from './component/Modal';
 import Check from './component/Check';
+import Fatherandchild from './component/Fatherandchild';
 function App() {
     return (
 
@@ -30,6 +31,7 @@ function App() {
                     <Route path='/new' element={<New />} />
                     <Route path='/left' element={<Left />} />
                     <Route path='/Check' element={<Check />} />
+                    <Route path='/Fatherandchild' element={<Fatherandchild />} />
                 </Routes>
             </BrowserRouter>
          

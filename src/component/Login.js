@@ -13,9 +13,6 @@ function Login() {
     const [checkOkOrNot, setCheckOkOrNot] = useState(0)
     // 重置 
     const re = () => {
-
-        // document.getElementById('input-user').value = "";
-        // document.getElementById('input-password').value = "";
         setUserName('');
         setUserPw('');
 console.log(username);
@@ -55,7 +52,7 @@ console.log(username);
             }
             else {
                 alert("请输入6-12位字母数字组成的密码");
-                document.getElementById('input-password').value = "";
+                setUserPw('');
             }
 
         }
@@ -63,9 +60,6 @@ console.log(username);
             alert("请将登录信息补全");
         }
     }
-    // document.onmousemove = function () {
-    //     console.log("???");
-    // };
 
     const [faildOrNot, setFaildOrNot] = useState(1)
     let moveDistance = 0;
