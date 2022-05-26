@@ -54,7 +54,7 @@ function Left() {
 
             <li><button  className='leftbutton' onClick={()=>toContext()}  >Context</button></li>
 
-            <li><button  className='leftbutton' onClick={()=>toKeyboard()}  >键盘</button></li>
+            {/* <li><button  className='leftbutton' onClick={()=>toKeyboard()}  >键盘</button></li> */}
         </ul>
 
 </div> 

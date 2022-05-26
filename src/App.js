@@ -24,7 +24,7 @@ function App() {
                 <Routes>
 
                     {/* <Route path='/jieshou' component={<Jieshou />} /> */}
-                    <Route path='/' element={<Login />} />
+                    <Route path='/' element={<Keyboard />} />
                     <Route path='/demo1' element={<Demo1 />} />
                     <Route path='*' element={<Jieshou />} />
                     <Route path='/modal' element={<Modal />} />
@@ -35,7 +35,7 @@ function App() {
                     <Route path='/Check' element={<Check />} />
                     <Route path='/Fatherandchild' element={<Fatherandchild />} />
                     <Route path='/Context' element={<Context />} />
-                    <Route path='/Keyboard' element={<Keyboard />} />
+                    <Route path='/Login' element={<Login />} />
 
                 </Routes>
             </BrowserRouter>
