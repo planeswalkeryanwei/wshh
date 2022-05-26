@@ -12,6 +12,8 @@ import Jieshou from './component/Jieshou';
 import Modal from './component/Modal';
 import Check from './component/Check';
 import Fatherandchild from './component/Fatherandchild';
+import Context from './component/Context';
+import Keyboard from './component/Keyboard';
 function App() {
     return (
 
@@ -32,6 +34,9 @@ function App() {
                     <Route path='/left' element={<Left />} />
                     <Route path='/Check' element={<Check />} />
                     <Route path='/Fatherandchild' element={<Fatherandchild />} />
+                    <Route path='/Context' element={<Context />} />
+                    <Route path='/Keyboard' element={<Keyboard />} />
+
                 </Routes>
             </BrowserRouter>
          

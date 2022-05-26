@@ -18,9 +18,22 @@ function Left() {
         
         navigate('/Main');
     }
-
-
-
+    const toFatherandchild = ()=> {
+        
+        navigate('/Fatherandchild');
+    }
+    const toJieshou = ()=> {
+        
+        navigate('/Jieshou');
+    }
+    const toContext = ()=> {
+        
+        navigate('/Context');
+    }
+    const toKeyboard = ()=> {
+        
+        navigate('/Keyboard');
+    }
     return(
 
 
@@ -33,8 +46,15 @@ function Left() {
         <ul>
             <li><button className='leftbutton'  onClick={()=>toDemo1()}  >demo1</button></li>
             
-            <li><button  className='leftbutton' onClick={()=>toDemo2()}  >demo2</button></li>
+            <li><button  className='leftbutton' onClick={()=>toDemo2()}  >表格</button></li>
            
+            <li><button  className='leftbutton' onClick={()=>toFatherandchild()}  >父子</button></li>
+
+            <li><button  className='leftbutton' onClick={()=>toJieshou()}  >404与ref</button></li>
+
+            <li><button  className='leftbutton' onClick={()=>toContext()}  >Context</button></li>
+
+            <li><button  className='leftbutton' onClick={()=>toKeyboard()}  >键盘</button></li>
         </ul>
 
 </div> 

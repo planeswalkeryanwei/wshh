@@ -160,7 +160,8 @@ th {
 .leftbutton{
     
     
-    width: 67.39px !important;
+    width: 135px !important;
+    margin-top: 3px;
     height: 42.14px !important;
     background-color: rgb(24, 144, 255) !important;
     border-style: solid !important;
