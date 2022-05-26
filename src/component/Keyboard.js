@@ -6,7 +6,9 @@ import { useEffect, useState,useRef } from "react"
 
 function Keyboard() {  
     const [key,setKey]=useState([]);
+    const ref =useRef(null)
     useEffect(()=>{
+        ref.current.focus();
        let random= Math.floor(Math.random() * (122 - 97 + 1) ) + 97;
        let a=String.fromCharCode(random);
        setKey(a);
@@ -20,7 +22,7 @@ const aaa=(event)=>{
   }
 }
     return (
-        <div id='keyboardAll'tabIndex={0} onKeyDown={event=>aaa(event)} >
+        <div id='keyboardAll'tabIndex={0} onKeyDown={event=>aaa(event)}   ref={ref}>
             <div id='keyboardall'>  
                 <div>
                     <div id='Q' className={ key=='q' ? 'keyboard one main' : 'keyboard one' }>Q</div>
