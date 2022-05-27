@@ -47,6 +47,7 @@ function Keyboard() {
         else {
             setHit(0);
             hitNumRef.current.style.opacity = "0"
+            hitNumRef.current.style.fontSize = "10px"
         }
 
     }
