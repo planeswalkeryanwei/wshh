@@ -22,7 +22,6 @@ function App() {
                 <Head />
                 <Left />
                 <Routes>
-
                     {/* <Route path='/jieshou' component={<Jieshou />} /> */}
                     <Route path='/' element={<Keyboard />} />
                     <Route path='/demo1' element={<Demo1 />} />
