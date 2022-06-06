@@ -5,6 +5,8 @@ import '../css/Keyboard.css'
 import { useEffect, useState, useRef } from "react"
 
 function Keyboard() {
+    let timer = null
+
     const [key, setKey] = useState([]);
 
     const ref = useRef(null)
@@ -13,6 +15,17 @@ function Keyboard() {
 
     const hitNumRef = useRef(null)
 
+    const [countDownIntA, setCountDownIntA] = useState(0);
+
+    const readyTimeRef = useRef(null)
+
+    const countDownRef = useRef(null)
+
+    const [countDownIntB, setCountDownIntB] = useState(10000);
+
+    const [countDownLeft, setCountDownLeft] = useState(99);
+
+    const [countDownRight, setCountDownRight] = useState(99);
     useEffect(() => {
         ref.current.focus();
         let random = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
@@ -22,14 +35,13 @@ function Keyboard() {
         if (hit == 0) {
             hitNumRef.current.style.opacity = "0"
         }
-
     }, [])
     const aaa = (event) => {
-        let hitNumber= hitNumRef.current.style.fontSize.split('px')
+        let hitNumber = hitNumRef.current.style.fontSize.split('px')
         console.log(hitNumber);
         if (hitNumber[0] <= 110) {
             console.log(hitNumber[0]);
-             hitNumRef.current.style.fontSize = 10 + hit * 5 + "px"
+            hitNumRef.current.style.fontSize = 10 + hit * 5 + "px"
         }
         if (hit <= 10) {
             hitNumRef.current.style.color = "yellow"
@@ -49,10 +61,47 @@ function Keyboard() {
             hitNumRef.current.style.opacity = "0"
             hitNumRef.current.style.fontSize = "10px"
         }
-
     }
+    // // 321倒计时倒到0调10秒钟的毫秒倒计时
+    //     function readyTime() {
+
+    //         if (readyTimeRef.current.innerHTML != 0) {
+    //             console.log(readyTimeRef.current.innerHTML);
+    //             setA(a => a - 1);
+    //             console.log("动");
+    //         }
+    //         else {
+    //             readyTimeRef.current.style.display = "none";
+    //             countDownRef.current.style.display = "block";
+    //            console.log("停");
+    //            clearInterval(readyTime);
+    //         }
+    //     }
+    useEffect(() => {
+        if (countDownIntA === 3) { 
+            timer = setInterval(() => setCountDownIntA(countDownIntA => --countDownIntA), 1000)
+            
+         }
+        else if (countDownIntA === 0) {
+            clearInterval(timer);
+            console.log("fule ");
+        }
+    }, [countDownIntA])
+
+
+    // // 点击事件调321倒计时
+    const start = () => {
+        readyTimeRef.current.style.opacity = "1";
+
+        setCountDownIntA(3);
+    }
+
+
     return (
         <div id='keyboardAll' tabIndex={0} onKeyDown={event => aaa(event)} ref={ref}>
+            <div id='readyTime' ref={readyTimeRef} style={{ opacity: '0' }}>{countDownIntA}</div>
+            <div id='countDown' ref={countDownRef} style={{ display: 'none' }}>{countDownLeft}:{countDownRight}</div>
+            <button id='startButton' onClick={() => start()}>开始</button>
             <div id='hitNumFlex'>
                 <div id='hitNum' ref={hitNumRef}>{hit}combo</div>
             </div>

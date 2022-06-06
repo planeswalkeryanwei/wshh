@@ -60,6 +60,9 @@ console.log(username);
             alert("请将登录信息补全");
         }
     }
+    // document.onmousemove = function () {
+    //     console.log("???");
+    // };
 
     const [faildOrNot, setFaildOrNot] = useState(1)
     let moveDistance = 0;
