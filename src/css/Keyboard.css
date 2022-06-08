@@ -150,14 +150,23 @@
 
 
 #readyTime{
+    font-family:fusanghu;
+
     height: 100px;
-    font-size: 99px;
+    font-size: 80px;
     line-height: 50px;
       text-align: center;
 }
 #countDown{
+    font-family:fusanghu;
+
     height: 100px;
-    font-size: 99px;
+    font-size: 80px;
     line-height: 50px;
       text-align: center;
+}
+#score{
+    font-family:fusanghu;
+    font-size: 30px;
+    float: right;
 }
