@@ -52,7 +52,7 @@ console.log(username);
             }
             else {
                 alert("请输入6-12位字母数字组成的密码");
-                setUserPw('');
+               setUserPw('');
             }
 
         }

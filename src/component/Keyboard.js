@@ -27,6 +27,7 @@ function Keyboard() {
     const [countDownIntB, setCountDownIntB] = useState(1);
 
     const [score, setScore] = useState(0);
+    
     useEffect(() => {
         ref.current.focus();
         let random = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
@@ -54,22 +55,21 @@ function Keyboard() {
             let random = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
             let a = String.fromCharCode(random);
             setKey(a);
-            setHit(hit + 1);
+            setHit(hit + 1); 
             hitNumRef.current.style.opacity = "1"
-            setScore(score+1);
+            setScore(score + 1);
         }
         else {
+            console.log(event);
             setHit(0);
             hitNumRef.current.style.opacity = "0"
             hitNumRef.current.style.fontSize = "10px"
-            
         }
     }
     useEffect(() => {
-        if (countDownIntA === 3) { 
+        if (countDownIntA === 3) {
             timer = setInterval(() => setCountDownIntA(countDownIntA => --countDownIntA), 1000)
-            
-         }
+        }
         else if (countDownIntA === 0) {
             clearInterval(timer);
             readyTimeRef.current.style.display = "none";
@@ -78,35 +78,31 @@ function Keyboard() {
         }
     }, [countDownIntA])
 
-    
+
     useEffect(() => {
-        if (countDownIntB === 9999) { 
-            
-            timerB= setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 1)
-            
-          
-        
-         }
-         else if (countDownIntB == 300) {
+        if (countDownIntB === 9999) {
+            timerB = setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 1)
+        }
+        else if (countDownIntB == 300) {
             countDownRef.current.style.color = "red";
         }
         else if (countDownIntB === 0) {
             // clearInterval(timerB);
             countDownRef.current.style.display = "none";
-            setTimeout(function(){
-            alert("挑战结束！！！  您的得分为"+`${score}`+"分")
-        },500);
+            setTimeout(function () {
+                alert("挑战结束！！！  您的得分为" + `${score}` + "分")
+            }, 500);
         }
     }, [countDownIntB])
-
     // // 点击事件调321倒计时
     const start = (event) => {
         readyTimeRef.current.style.opacity = "1";
         setScore(0);
         setCountDownIntA(3);
-        event.target.style.opacity="0"
+        event.target.style.opacity = "0"
         setHit(0);
     }
+
 
 
     return (
@@ -154,6 +150,5 @@ function Keyboard() {
             </div>
         </div>
     )
-
 }
 export default Keyboard

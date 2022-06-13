@@ -17,7 +17,7 @@ function Head() {
 
     const outLogin = ()=> {
         
-        navigate('/');
+        navigate('/Login');
     }
 
 
