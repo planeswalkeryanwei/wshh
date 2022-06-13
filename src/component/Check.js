@@ -6,12 +6,7 @@ function Check() {
     const [faildOrNot, setFaildOrNot] = useState(1)
     var moveDistance = 0;
     function down(e) {
-        var checkButtonUnder = document.getElementById("checkButtonUnder");
-        // e.target.style.left = "0px";
-        // checkButtonUnder.style.width = "21px";
-        // e.target.onmousedown = null;
-        // e.target.onmousemove = null;
-        // checkButtonUnder.innerHTML = ""
+        let checkButtonUnder = document.getElementById("checkButtonUnder");
         e.target.onmousemove = (MouseEvent) => {
             setFaildOrNot(1);
             console.log(faildOrNot);
@@ -22,7 +17,21 @@ function Check() {
                 if (moveDistance >= 259) {
                     e.target.onmousedown = null;
                     e.target.onmousemove = null;
-                    checkButtonUnder.innerHTML = "验证成功！！！"
+                    checkButtonUnder.innerHTML = "<div id='loading'></div>验证成功,请稍等！！！"
+                    let random2to5 = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
+                    let random2to5Ms = random2to5 + "000";
+                    console.log(random2to5Ms);
+                    setTimeout(function () {
+                        checkButtonUnder.innerHTML = "加载完成"
+                        setTimeout(function () {
+                            
+                            document.getElementById("checkAll").style.opacity = "0"
+                            e.target.style.left = "0px";
+                            checkButtonUnder.style.width = "0px";
+                            checkButtonUnder.innerHTML = ""
+                        }, 500);
+                    }, random2to5Ms);
+
                 }
                 e.target.onmouseup = () => {
                     if (moveDistance >= 259) {
@@ -46,25 +55,24 @@ function Check() {
             e.target.onmousemove = null;
         }
         else {
-            var checkButton = document.getElementById("checkButton");
+            let checkButton = document.getElementById("checkButton");
             //拖尾长度带px
-            var checkButtonWidth = e.target.style.width.split("px")[0];
+            let checkButtonWidth = e.target.style.width.split("px")[0];
             // 要往左多少
-            var goLeft = checkButtonWidth - e.nativeEvent.offsetX;
-            // left在哪 数字
-            var left = checkButton.style.left.split("px")[0];
-            // 自身长度
-            var newCheckButtonWidth = (checkButtonWidth - goLeft) + "px";
+            let goLeft = checkButtonWidth - e.nativeEvent.offsetX;
+            // 拖尾长度修改
+            let newCheckButtonWidth = (e.nativeEvent.offsetX) + "px";
             e.target.style.width = newCheckButtonWidth;
-            // 往右的偏移长度也要减
-            moveDistance = moveDistance - goLeft;
             //往左移动
-            console.log(goLeft);
-            console.log(left);
+            checkButton.style.left = (e.nativeEvent.offsetX) + "px"
+            // 往右的偏移长度也要减
+            // moveDistance = moveDistance - goLeft;
+            console.log("checkButtonWidth"+checkButtonWidth);
             console.log("偏移长度" + moveDistance);
-            checkButton.style.left = (left - goLeft) + "px"
         }
     }
+
+
 
 
 

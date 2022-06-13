@@ -38,7 +38,7 @@ function Keyboard() {
             hitNumRef.current.style.opacity = "0"
         }
     }, [])
-    const aaa = (event) => {
+    const typing = (event) => {
         let hitNumber = hitNumRef.current.style.fontSize.split('px')
         console.log(hitNumber);
         if (hitNumber[0] <= 110) {
@@ -94,6 +94,7 @@ function Keyboard() {
             }, 500);
         }
     }, [countDownIntB])
+
     // // 点击事件调321倒计时
     const start = (event) => {
         readyTimeRef.current.style.opacity = "1";
@@ -106,7 +107,7 @@ function Keyboard() {
 
 
     return (
-        <div id='keyboardAll' tabIndex={0} onKeyDown={event => aaa(event)} ref={ref}>
+        <div id='keyboardAll' tabIndex={0} onKeyDown={event => typing(event)} ref={ref}>
             <span id='score'>得分：{score}</span>
             <div id='readyTime' ref={readyTimeRef} style={{ opacity: '0' }}>{countDownIntA}</div>
             <div id='countDown' ref={countDownRef} style={{ display: 'none' }}>{countDownIntB.toString().split("")[0]}{countDownIntB.toString().split("")[1]}:{countDownIntB.toString().split("")[2]}{countDownIntB.toString().split("")[3]}</div>

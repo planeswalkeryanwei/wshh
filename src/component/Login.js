@@ -15,7 +15,7 @@ function Login() {
     const re = () => {
         setUserName('');
         setUserPw('');
-console.log(username);
+        console.log(username);
     }
     // 登录
     const uselogin = async () => {
@@ -31,7 +31,7 @@ console.log(username);
                             alert("欢迎" + res.data[0].dname + "登录");
                             navigate('/main')
                         }
-                        else{
+                        else {
                             alert("请滑动滑块完成验证,并等待其完成！");
                         }
                     }
@@ -52,7 +52,7 @@ console.log(username);
             }
             else {
                 alert("请输入6-12位字母数字组成的密码");
-               setUserPw('');
+                setUserPw('');
             }
 
         }
@@ -88,7 +88,7 @@ console.log(username);
                             setCheckOrNot(0);
                             setCheckOkOrNot(2);
                             document.getElementById("checkAll").style.opacity = "0"
-                            e.target.style.left =  "0px";
+                            e.target.style.left = "0px";
                             checkButtonUnder.style.width = "0px";
                             checkButtonUnder.innerHTML = ""
                         }, 500);
@@ -122,18 +122,15 @@ console.log(username);
             let checkButtonWidth = e.target.style.width.split("px")[0];
             // 要往左多少
             let goLeft = checkButtonWidth - e.nativeEvent.offsetX;
-            // left在哪 数字
-            let left = checkButton.style.left.split("px")[0];
-            // 自身长度
-            let newCheckButtonWidth = (checkButtonWidth - goLeft) + "px";
+            // 拖尾长度修改
+            let newCheckButtonWidth = (e.nativeEvent.offsetX) + "px";
             e.target.style.width = newCheckButtonWidth;
+            //往左移动
+            checkButton.style.left = (e.nativeEvent.offsetX) + "px"
             // 往右的偏移长度也要减
             moveDistance = moveDistance - goLeft;
-            //往左移动
-            console.log(goLeft);
-            console.log(left);
+            console.log("checkButtonWidth"+checkButtonWidth);
             console.log("偏移长度" + moveDistance);
-            checkButton.style.left = (left - goLeft) + "px"
         }
     }
 
