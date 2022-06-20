@@ -6,6 +6,7 @@ import '../css/Check.css'
 import { useEffect, useState } from "react"
 
 function Login() {
+    let a =1;
     const navigate = useNavigate();
     const [username, setUserName] = useState("")
     const [userpw, setUserPw] = useState("")
@@ -23,12 +24,18 @@ function Login() {
         if (username != "" && userpw != "") {
             let checkpw = /^(?![^\da-zA-Z]+$).{6,12}$/;
             if (checkpw.test(userpw)) {
-                const res = await axios.get(`http://localhost:3001/data/?dname=${username}`)
-                console.log(res.data);
-                if (res.data != "") {
-                    if (username == res.data[0].dname && userpw == res.data[0].dpassword) {
+                 // 演示版写死
+                // const res = await axios.get(`http://localhost:3001/data/?dname=${username}`)
+                // 演示版写死
+                // if (res.data != "") {
+                    if (a== 1) {
+                    // 演示版写死
+                    // if (username == res.data[0].dname && userpw == res.data[0].dpassword) {
+                        if (username == 'wang' && userpw == '123456') {
+
                         if (checkOkOrNot == 0 || checkOkOrNot == 2) {
-                            alert("欢迎" + res.data[0].dname + "登录");
+                            // alert("欢迎" + res.data[0].dname + "登录");
+                            alert("欢迎wang登录");
                             navigate('/main')
                         }
                         else {

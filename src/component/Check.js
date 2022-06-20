@@ -1,4 +1,5 @@
 import '../css/Check.css'
+import '../css/headleft.css'
 import { useEffect, useState } from "react"
 
 
@@ -24,7 +25,7 @@ function Check() {
                     setTimeout(function () {
                         checkButtonUnder.innerHTML = "加载完成"
                         setTimeout(function () {
-                            
+
                             document.getElementById("checkAll").style.opacity = "0"
                             e.target.style.left = "0px";
                             checkButtonUnder.style.width = "0px";
@@ -67,22 +68,31 @@ function Check() {
             checkButton.style.left = (e.nativeEvent.offsetX) + "px"
             // 往右的偏移长度也要减
             // moveDistance = moveDistance - goLeft;
-            console.log("checkButtonWidth"+checkButtonWidth);
+            console.log("checkButtonWidth" + checkButtonWidth);
             console.log("偏移长度" + moveDistance);
         }
     }
 
 
-
-
+    // function test(a, b,c) {
+    //     if (a > 10 && b > 10) {
+    //         let d = 1;
+    //         console.log("d="+d);
+    //     }
+    //     if (a < 0 || c < 0) {
+    //         let e = 1;
+    //         console.log("e="+e);
+    //     }
+    // }
 
     return (
 
         <div id='check' >
+            {/* <button className='inputbutton' onClick={() => test( 20,10, 20)} >test</button> */}
             <div id='checkAll'>
                 <div id='checkButtonUnder' onMouseMove={event => { move(event) }} >
                 </div>
-                <div id='placeholder' style={{ display:faildOrNot == 0 ? "block":"none"}}>
+                <div id='placeholder' style={{ display: faildOrNot == 0 ? "block" : "none" }}>
                     验证失败
                 </div>
                 <span id='checkButton' onMouseDown={event => { down(event) }}>

@@ -102,6 +102,7 @@ function Keyboard() {
         setCountDownIntA(3);
         event.target.style.opacity = "0"
         setHit(0);
+        ref.current.focus();
     }
 
 
