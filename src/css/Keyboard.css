@@ -171,3 +171,19 @@
     font-size: 30px;
     float: right;
 }
+#countDownto3{
+    font-family:fusanghu;
+
+    height: 100px;
+    font-size: 80px;
+    line-height: 50px;
+      text-align: center;
+}
+#countDownto2{
+    font-family:fusanghu;
+
+    height: 100px;
+    font-size: 80px;
+    line-height: 50px;
+      text-align: center; 
+}

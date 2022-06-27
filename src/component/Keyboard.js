@@ -24,9 +24,15 @@ function Keyboard() {
 
     const countDownRef = useRef(null)
 
+    const countDownto3Ref = useRef(null)
+
+    const countDownto2Ref = useRef(null)
+
     const [countDownIntB, setCountDownIntB] = useState(1);
 
     const [score, setScore] = useState(0);
+
+    const [to3, setTo3] = useState(4);
     
     useEffect(() => {
         ref.current.focus();
@@ -74,21 +80,32 @@ function Keyboard() {
             clearInterval(timer);
             readyTimeRef.current.style.display = "none";
             countDownRef.current.style.display = "block";
-            setCountDownIntB(9999)
+            setCountDownIntB(2000)
         }
     }, [countDownIntA])
 
 
     useEffect(() => {
-        if (countDownIntB === 9999) {
-            timerB = setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 1)
+        if (countDownIntB === 2000) {
+            timerB = setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 10)
+        }
+        else if (countDownIntB == 999) {
+            // 指示器变为三位
+            setTo3(3);
+            countDownRef.current.style.display = "none";
+            countDownto3Ref.current.style.display = "block";
         }
         else if (countDownIntB == 300) {
-            countDownRef.current.style.color = "red";
+            countDownto3Ref.current.style.color = "red";
+        }
+        else if (countDownIntB == 99) {
+            setTo3(2);
+            countDownto3Ref.current.style.display = "none";
+            countDownto2Ref.current.style.display = "block";
         }
         else if (countDownIntB === 0) {
             // clearInterval(timerB);
-            countDownRef.current.style.display = "none";
+            countDownto2Ref.current.style.display = "none";
             setTimeout(function () {
                 alert("挑战结束！！！  您的得分为" + `${score}` + "分")
             }, 500);
@@ -112,6 +129,8 @@ function Keyboard() {
             <span id='score'>得分：{score}</span>
             <div id='readyTime' ref={readyTimeRef} style={{ opacity: '0' }}>{countDownIntA}</div>
             <div id='countDown' ref={countDownRef} style={{ display: 'none' }}>{countDownIntB.toString().split("")[0]}{countDownIntB.toString().split("")[1]}:{countDownIntB.toString().split("")[2]}{countDownIntB.toString().split("")[3]}</div>
+            <div id='countDownto3' ref={countDownto3Ref} style={{ display: 'none' }}>0{countDownIntB.toString().split("")[0]}:{countDownIntB.toString().split("")[1]}{countDownIntB.toString().split("")[2]}</div>
+            <div id='countDownto2' ref={countDownto2Ref} style={{ display: 'none' }}>00:{countDownIntB.toString().split("")[0]}{countDownIntB.toString().split("")[1]}</div>
             <button id='startButton' onClick={event => start(event)}>开始</button>
             <div id='hitNumFlex'>
                 <div id='hitNum' ref={hitNumRef}>{hit}combo</div>
