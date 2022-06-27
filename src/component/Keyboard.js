@@ -32,7 +32,6 @@ function Keyboard() {
 
     const [score, setScore] = useState(0);
 
-    const [to3, setTo3] = useState(4);
     
     useEffect(() => {
         ref.current.focus();
@@ -80,18 +79,16 @@ function Keyboard() {
             clearInterval(timer);
             readyTimeRef.current.style.display = "none";
             countDownRef.current.style.display = "block";
-            setCountDownIntB(2000)
+            setCountDownIntB(3000)
         }
     }, [countDownIntA])
 
 
     useEffect(() => {
-        if (countDownIntB === 2000) {
+        if (countDownIntB === 3000) {
             timerB = setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 10)
         }
         else if (countDownIntB == 999) {
-            // 指示器变为三位
-            setTo3(3);
             countDownRef.current.style.display = "none";
             countDownto3Ref.current.style.display = "block";
         }
@@ -99,7 +96,6 @@ function Keyboard() {
             countDownto3Ref.current.style.color = "red";
         }
         else if (countDownIntB == 99) {
-            setTo3(2);
             countDownto3Ref.current.style.display = "none";
             countDownto2Ref.current.style.display = "block";
         }
