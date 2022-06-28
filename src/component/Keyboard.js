@@ -102,11 +102,14 @@ function Keyboard() {
         }
         else if (countDownIntB == 99) {
             countDownto3Ref.current.style.display = "none";
+            countDownto2Ref.current.style.color = "red";
             countDownto2Ref.current.style.display = "block";
         }
         else if (countDownIntB === 0) {
             // clearInterval(timerB);
             countDownto2Ref.current.style.display = "none";
+            scoreRef.current.style.opacity = "0";
+            hitNumRef.current.style.opacity = "0"
             setTimeout(function () {
                 alert("挑战结束！！！  您的得分为" + `${score}` + "分")
             }, 500);
