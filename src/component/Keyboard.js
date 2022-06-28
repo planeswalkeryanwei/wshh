@@ -109,7 +109,7 @@ function Keyboard() {
             // clearInterval(timerB);
             countDownto2Ref.current.style.display = "none";
             scoreRef.current.style.opacity = "0";
-            hitNumRef.current.style.opacity = "0"
+            hitNumRef.current.style.display = "none"
             setTimeout(function () {
                 alert("挑战结束！！！  您的得分为" + `${score}` + "分")
             }, 500);
