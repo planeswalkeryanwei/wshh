@@ -32,7 +32,7 @@ function Keyboard() {
 
     const [score, setScore] = useState(0);
 
-    
+    const scoreRef= useRef(null)
     useEffect(() => {
         ref.current.focus();
         let random = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
@@ -86,6 +86,11 @@ function Keyboard() {
 
     useEffect(() => {
         if (countDownIntB === 3000) {
+            setScore(0);
+            scoreRef.current.style.opacity="1";
+            setHit(0);
+            hitNumRef.current.style.opacity="1";
+            hitNumRef.current.style.fontSize = "10px"
             timerB = setInterval(() => setCountDownIntB(countDownIntB => --countDownIntB), 10)
         }
         else if (countDownIntB == 999) {
@@ -111,10 +116,8 @@ function Keyboard() {
     // // 点击事件调321倒计时
     const start = (event) => {
         readyTimeRef.current.style.opacity = "1";
-        setScore(0);
         setCountDownIntA(3);
         event.target.style.opacity = "0"
-        setHit(0);
         ref.current.focus();
     }
 
@@ -122,14 +125,14 @@ function Keyboard() {
 
     return (
         <div id='keyboardAll' tabIndex={0} onKeyDown={event => typing(event)} ref={ref}>
-            <span id='score'>得分：{score}</span>
+            <span id='score' ref={scoreRef} style={{ opacity: '0' }}>得分：{score}</span>
             <div id='readyTime' ref={readyTimeRef} style={{ opacity: '0' }}>{countDownIntA}</div>
             <div id='countDown' ref={countDownRef} style={{ display: 'none' }}>{countDownIntB.toString().split("")[0]}{countDownIntB.toString().split("")[1]}:{countDownIntB.toString().split("")[2]}{countDownIntB.toString().split("")[3]}</div>
             <div id='countDownto3' ref={countDownto3Ref} style={{ display: 'none' }}>0{countDownIntB.toString().split("")[0]}:{countDownIntB.toString().split("")[1]}{countDownIntB.toString().split("")[2]}</div>
             <div id='countDownto2' ref={countDownto2Ref} style={{ display: 'none' }}>00:{countDownIntB.toString().split("")[0]}{countDownIntB.toString().split("")[1]}</div>
             <button id='startButton' onClick={event => start(event)}>开始</button>
             <div id='hitNumFlex'>
-                <div id='hitNum' ref={hitNumRef}>{hit}combo</div>
+                <div id='hitNum'  ref={hitNumRef} style={{ opacity: '0' }}>{hit}combo</div>
             </div>
             <div id='keyboardall'>
                 <div>
