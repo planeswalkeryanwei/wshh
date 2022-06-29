@@ -79,13 +79,13 @@ function Keyboard() {
             clearInterval(timer);
             readyTimeRef.current.style.display = "none";
             countDownRef.current.style.display = "block";
-            setCountDownIntB(3000)
+            setCountDownIntB(6000)
         }
     }, [countDownIntA])
 
 
     useEffect(() => {
-        if (countDownIntB === 3000) {
+        if (countDownIntB === 6000) {
             setScore(0);
             scoreRef.current.style.opacity="1";
             setHit(0);
